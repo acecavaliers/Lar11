@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\CustomerController;
 use App\Http\Controllers\CustomersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 // })->middleware('auth:sanctum');
 
-Route::group(['prefix'=>'V1'],function(){
-    Route::apiResource('customers',CustomersController::class);
-});
+// Route::group(['prefix'=>'V1'],function(){
+//     Route::apiResource('customers',CustomersController::class);
+// });
+Route::get('customers',[CustomerController::class,'index']);
